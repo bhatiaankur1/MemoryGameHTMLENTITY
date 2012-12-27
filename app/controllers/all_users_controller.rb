@@ -2,9 +2,11 @@ class AllUsersController < ApplicationController
 	before_filter :authenticate_user!
    	def index
 		@users = User.all
+    authorize! :destroy,@user, :message => "Not authorized"
     end
 def update_admin
    	@user = User.find(params[:id]);
+    authorize! :destroy,@user, :message => "Not authorized"
   	if @user.Roles == "Admin"
   		@user.Roles = ""
   	else

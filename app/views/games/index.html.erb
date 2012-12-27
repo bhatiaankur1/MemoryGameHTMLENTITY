@@ -16,6 +16,9 @@ Welcome <%= current_user.Names%>
        <%= link_to "Log Out", destroy_user_session_path, :method => :delete  %><br>
 <% end %>
 	Your Current Level is Level <%= @level %> <%= link_to "Level #{@levelArr[0]}", "/?level=#{@levelArr[0]}" %> <%= link_to "Level #{@levelArr[1]}", "/?level=#{@levelArr[1]}" %> <%= link_to "Level #{@levelArr[2]}", "/?level=#{@levelArr[2]}" %>
+	<% if(can? :destroy,:user) %>
+<%= link_to 'Admin', all_users_path %>
+<%end%>
 	<br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %></div>
 <table  align = "Center">
 	<% i = 0 %>

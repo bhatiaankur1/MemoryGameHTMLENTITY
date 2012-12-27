@@ -1,0 +1,20 @@
+    <td><%= user.Names %></td>
+    <td><%= user.email  %></td>
+    <td><%= user.LowestClicksL1 %></td>
+    <td><%= user.LowestClicksL2 %></td>
+    <td><%= user.LowestClicksL3 %></td>
+    <td><%= user.LowestClicksL4 %></td>
+    <% if (user.Roles == "Admin") %>
+      <td>Admin</td>
+      <td><%= submit_tag "Remove Admin", :type => 'button',  :id => user.id, :class => "restartAdmin"%></td>
+      <td>
+        <%= submit_tag "Delete User", :type => 'button',  :id => user.id, :class => "deleteadmin"%>
+</td>
+      <% else %>
+        <td></td>
+      <td><%= submit_tag "Make Admin", :type => 'button', :id => user.id, :class => "restartAdmin"%></td>
+      
+      <td><%= submit_tag "Delete User", :type => 'button',  :id => user.id, :class => "deleteadmin"%>
+      </td>
+      
+<% end %>

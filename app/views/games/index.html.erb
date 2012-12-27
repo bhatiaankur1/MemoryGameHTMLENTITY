@@ -1,0 +1,42 @@
+<script>
+	var level = "<%= @level %>"
+	var gridsize = "<%= @gridsize %>"
+	var randomArr = "<%= @randomArr %>".slice(1,-1).split(",");
+	var totalopen = "<%= @totalopen %>"
+	var lowestscore = "<%=@lowestscore %>"
+	var attempts = 0;
+	var clickdetails = new Array(-1, -1);
+	var flagclicked = true;
+	var opencount = 0
+</script>
+<body>
+	<h1 align="center"><u>Memory Game</u> </h1>
+Welcome <%= current_user.Names%>
+   <% if user_signed_in? %>              
+       <%= link_to "Log Out", destroy_user_session_path, :method => :delete  %><br>
+<% end %>
+	Your Current Level is Level <%= @level %> <%= link_to "Level #{@levelArr[0]}", "/?level=#{@levelArr[0]}" %> <%= link_to "Level #{@levelArr[1]}", "/?level=#{@levelArr[1]}" %> <%= link_to "Level #{@levelArr[2]}", "/?level=#{@levelArr[2]}" %>
+	<br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %></div>
+<table  align = "Center">
+	<% i = 0 %>
+	<% j = 0 %>
+<% while(i < @gridsize) %>
+<tr>
+	<% while(j < @gridsize) %>
+	<td id = <%= "#{i*@gridsize+j}" %>><%= "#{i*@gridsize+j}" %></td>
+	<% j = j + 1 %>
+	<% end %>
+	<% j = 0 %>
+	<% i = i + 1 %>
+</tr>
+<% end %>
+</table>
+<br>
+<div id = 'attemp', align = "Center">Your Attempts ---> </div>
+<div class="actions", align = "Center">
+	<%= submit_tag "Restart Game", :type => 'button', :onclick => 'resetval()', :class => "restart"%>
+   </div>
+   <h4><u>Rules </u></h4>
+   Click on the squares. If you click on two squares with similar images, they will open else they will close.
+   You have to open all the squares in least number of clicks.
+</body>

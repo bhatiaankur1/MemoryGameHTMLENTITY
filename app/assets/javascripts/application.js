@@ -148,7 +148,7 @@ function checkvalues()
 		opencount++;
 		if(opencount == parseInt(totalopen))
 		{
-		if(parseInt(lowestscore) > parseInt(attempts)) || (lowestscore == "")
+		if(parseInt(lowestscore) > parseInt(attempts) || (lowestscore == ""))
 		{
 			$.ajax({
  						 type: "GET",

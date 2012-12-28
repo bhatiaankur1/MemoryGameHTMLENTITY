@@ -123,7 +123,7 @@ for(i=0;i < gridsize;i++)
 	if(level == "1")
 	{
 		$("#"+(i*gridsize+j).toString()).addClass("closedfour");
-		htmlent = htmlentity+parseInt(randomArr[(i*gridsize+j)])*5;
+		htmlent = htmlentity+parseInt(randomArr[(i*gridsize+j)])*8;
 	}
 	else if(level == "2")
 	{

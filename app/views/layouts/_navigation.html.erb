@@ -1,0 +1,43 @@
+<div class = 'brand'>Memory Game </div>
+<ul class="nav">
+  <% if @levelArr %>
+  <li>
+    <% if @levelArr[0] == 5 %>
+    <%= link_to "Level 1", "/?level=1" %> 
+    <% else %>
+    <%= link_to "Your Level --> #{@levelArr[0]}", "" %> 
+    <% end %>
+  </li><li>
+  <%= link_to "Level #{@levelArr[1]}", "/?level=#{@levelArr[1]}" %> 
+  </li><li>
+  <%= link_to "Level #{@levelArr[2]}", "/?level=#{@levelArr[2]}" %> 
+  </li><li>
+  <%= link_to "Level #{@levelArr[3]}", "/?level=#{@levelArr[3]}" %>
+</li>
+<% end %>
+<% if user_signed_in? %>
+<% if current_user.Roles == "Admin" %>
+      <li>
+      <%= link_to 'Admin', all_users_path %>
+      </li>
+    <% end %>
+  
+    <li>
+    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+    </li>
+  <% else %>
+    <li>
+    <%= link_to('Login', new_user_session_path)  %>
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to('Edit account', edit_user_registration_path) %>
+    </li>
+    
+  <% else %>
+    <li>
+    <%= link_to('Sign up', new_user_registration_path)  %>
+    </li>
+  <% end %>
+</ul>

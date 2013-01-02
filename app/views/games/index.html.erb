@@ -10,17 +10,9 @@
 	var opencount = 0
 </script>
 <body>
-	<h1 align="center"><u>Memory Game</u> </h1>
-Welcome <%= current_user.Names%>
-   <% if user_signed_in? %>              
-       <%= link_to "Log Out", destroy_user_session_path, :method => :delete  %><br>
-<% end %>
-	Your Current Level is Level <%= @level %> <%= link_to "Level #{@levelArr[0]}", "/?level=#{@levelArr[0]}" %> <%= link_to "Level #{@levelArr[1]}", "/?level=#{@levelArr[1]}" %> <%= link_to "Level #{@levelArr[2]}", "/?level=#{@levelArr[2]}" %>
-	<% if(can? :destroy,:user) %>
-<%= link_to 'Admin', all_users_path %>
-<%end%>
-	<br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %></div>
-<table  align = "Center">
+	Welcome <%= current_user.Names%>
+  <br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %></div>
+<table  align = "Center", class="table-bordered-Custom">
 	<% i = 0 %>
 	<% j = 0 %>
 <% while(i < @gridsize) %>

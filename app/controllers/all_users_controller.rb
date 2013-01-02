@@ -2,6 +2,7 @@ class AllUsersController < ApplicationController
 	before_filter :authenticate_user!
    	def index
 		@users = User.all
+    @levelArr = [5,2,3,4]
     authorize! :destroy,@user, :message => "Not authorized"
     end
 def update_admin

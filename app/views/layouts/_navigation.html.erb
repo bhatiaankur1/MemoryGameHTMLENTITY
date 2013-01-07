@@ -2,7 +2,7 @@
 <ul class="nav">
   <% if @levelArr %>
   <li>
-    <% if @levelArr[0] == 5 %>
+    <% if ((@levelArr[0] == 5) | (@levelArr[0] == 6)) %>
     <%= link_to "Level 1", "/?level=1" %> 
     <% else %>
     <%= link_to "Your Level --> #{@levelArr[0]}", "" %> 
@@ -40,4 +40,12 @@
     <%= link_to('Sign up', new_user_registration_path)  %>
     </li>
   <% end %>
+  <% if @levelArr %>
+  <% if (@levelArr[0] != 6) %>
+  <li>
+    <%= link_to('Feedback', feedback_path) %> 
+  </li>
+  <% end %>
+  <% end %>
+
 </ul>

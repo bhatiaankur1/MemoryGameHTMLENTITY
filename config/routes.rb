@@ -4,6 +4,9 @@ match 'all_users' => "all_users#index", :via => :get
   match 'updateadmin' => "all_users#update_admin", :via => :get
   match 'deluser' => "all_users#delete_user", :via => :get
    match 'gameend' => "games#game_end", :via => :get
+   match 'feedback' => "feedback#index"
+   match 'submitfeedback' => "feedback#submitfeedback"
+   match 'feedackthanks' => "feedback#Thanks"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -62,7 +62,7 @@ MemoryGames::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-config.action_mailer.default_url_options = { :host => 'amazing-memory-game' }
+config.action_mailer.default_url_options = { :host => 'amazing-memory-game.herokuapp.com' }
   config.action_mailer.default :charset => "utf-8"
     config.action_mailer.default :mime_version => "1.0"
     config.action_mailer.default :implicit_parts_order => [ "text/html", "text/plain"]

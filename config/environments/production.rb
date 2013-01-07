@@ -62,6 +62,27 @@ MemoryGames::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+config.action_mailer.default_url_options = { :host => 'amazing-memory-game' }
+  config.action_mailer.default :charset => "utf-8"
+    config.action_mailer.default :mime_version => "1.0"
+    config.action_mailer.default :implicit_parts_order => [ "text/html", "text/plain"]
+  config.action_mailer.raise_delivery_errors = true
+  
+    config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address        => 'smtp.gmail.com',
+  :port           => 587,
+  :domain         => 'your.domain.com',
+  :authentication => :login,
+  :content_type   => "text/html",
+  :user_name      => 'amazingmindgames',
+  :password       => 'amazingmindgamesl1'
+   }
+
+
+
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)

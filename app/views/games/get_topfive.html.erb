@@ -1,0 +1,21 @@
+<script>
+var level = "50";
+</script>
+<body>
+    <h3> Lowest Clicks for Level <%= @level %></h3><br>
+<table class = "table">
+  <tr>
+    <th> Name </th>
+    <th> Lowest Clicks</th>
+</tr>
+
+<% @user.each do |user| %>
+<% if user.returnuser_score(@level) == "" %>
+<tr> 
+<td><%= user.Names %></td>
+<td><%= user.returnuser_score(@level) %></td>
+</tr>
+<% end %>
+<% end %>
+</table>
+</body>

@@ -7,6 +7,7 @@ match 'all_users' => "all_users#index", :via => :get
    match 'feedback' => "feedback#index"
    match 'submitfeedback' => "feedback#submitfeedback"
    match 'feedackthanks' => "feedback#Thanks"
+   match 'gettopfive' => "games#get_topfive"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

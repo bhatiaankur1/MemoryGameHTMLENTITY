@@ -54,10 +54,10 @@ before_filter :authenticate_user!
 	end
 	def get_topfive
 	if not params[:level]
-		@val = "\"LowestClicksL1 DESC\""
+		@val = "\"LowestClicksL1\" DESC"
 		@level = "1"
 	else
-		@val = "\"LowestClicksL" + params[:level] + " DESC\""
+		@val = "\"LowestClicksL" + params[:level] + "\"DESC"
 		@level = params[:level]
 	end
 		@user = User.order(@val).limit(5)

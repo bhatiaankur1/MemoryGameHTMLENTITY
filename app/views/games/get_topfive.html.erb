@@ -10,7 +10,7 @@ var level = "50";
 </tr>
 
 <% @user.each do |user| %>
-<% if user.returnuser_score(@level) == "" %>
+<% if (user.returnuser_score(@level) != "" and user.returnuser_score(@level) != nil) %>
 <tr> 
 <td><%= user.Names %></td>
 <td><%= user.returnuser_score(@level) %></td>

@@ -11,7 +11,7 @@
 </script>
 <body>
 	Welcome <%= current_user.Names%>
-  <br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %> .  <%= link_to "Top five lowest scores for this level", "/gettopfive?#{@level}", :target => '_blank' %></div>
+  <br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %> .  <%= link_to "Top five lowest scores for this level", "/gettopfive?level=#{@level}", :target => '_blank' %></div>
 
 <table  align = "Center", class="table-bordered-Custom">
 	<% i = 0 %>

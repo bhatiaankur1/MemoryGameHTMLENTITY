@@ -76,7 +76,7 @@ config.action_mailer.default_url_options = { :host => 'amazing-memory-game.herok
   :authentication => :login,
   :content_type   => "text/html",
   :user_name      => 'amazingmindgames',
-  :password       => 'amazingmindgamel1'
+  :password       => 'amazingl1'
    }
 
 

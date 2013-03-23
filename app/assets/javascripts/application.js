@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require bootstrap
+//= require_tree 
+
 var htmlentity = 192;
 $(document).ready(function() {
 	if (level != "50")

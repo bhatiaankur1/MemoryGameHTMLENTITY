@@ -11,9 +11,8 @@
 </script>
 <body>
 	Welcome <%= current_user.Names%>
-  <br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %> .  <%= link_to "Top five lowest scores for this level", "/gettopfive?level=#{@level}", :target => '_blank' %></div>
-
-<table  align = "Center", class="table-bordered-Custom">
+  <br><div id = "LC">Your Lowest Score for this level <%= @lowestscore %> .  <%= link_to "Top five lowest scores for this level", "/gettopfive?level=#{@level}", :remote => true %></div>
+   <table  align = "Center", class="table-bordered-Custom">
 	<% i = 0 %>
 	<% j = 0 %>
 <% while(i < @gridsize) %>
@@ -35,4 +34,7 @@
    <h4><u>Rules </u></h4>
    Click on the squares. If you click on two squares with similar images, they will open else they will close.
    You have to open all the squares in least number of clicks.
+   <!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
 </body>
